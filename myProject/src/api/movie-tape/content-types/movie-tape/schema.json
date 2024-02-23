@@ -1,0 +1,43 @@
+{
+  "kind": "collectionType",
+  "collectionName": "movie_tapes",
+  "info": {
+    "singularName": "movie-tape",
+    "pluralName": "movie-tapes",
+    "displayName": "Movie Tape",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "publication_date": {
+      "type": "date"
+    },
+    "category": {
+      "type": "string"
+    },
+    "stock": {
+      "type": "integer"
+    },
+    "price": {
+      "type": "integer"
+    },
+    "late_fine": {
+      "type": "integer"
+    },
+    "damage_costs": {
+      "type": "integer"
+    },
+    "loans": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::loan.loan",
+      "mappedBy": "movie_tape"
+    }
+  }
+}

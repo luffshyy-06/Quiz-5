@@ -1,0 +1,43 @@
+{
+  "kind": "collectionType",
+  "collectionName": "loans",
+  "info": {
+    "singularName": "loan",
+    "pluralName": "loans",
+    "displayName": "Loan",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "loan_date": {
+      "type": "date"
+    },
+    "return_deadline": {
+      "type": "date"
+    },
+    "return_date": {
+      "type": "date"
+    },
+    "condition": {
+      "type": "string"
+    },
+    "total_payment": {
+      "type": "integer"
+    },
+    "member": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::member.member",
+      "inversedBy": "loans"
+    },
+    "movie_tape": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::movie-tape.movie-tape",
+      "inversedBy": "loans"
+    }
+  }
+}
